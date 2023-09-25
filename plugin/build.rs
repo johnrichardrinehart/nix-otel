@@ -4,6 +4,7 @@ extern crate cbindgen;
 trait AddPkg {
     fn add_pkg_config(&mut self, pkg: pkg_config::Library) -> &mut Self;
 }
+
 impl AddPkg for cc::Build {
     fn add_pkg_config(&mut self, pkg: pkg_config::Library) -> &mut Self {
         for p in pkg.include_paths.into_iter() {

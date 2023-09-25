@@ -33,7 +33,7 @@
               # any dev tools you use in excess of the rust ones
               nativeBuildInputs = old.nativeBuildInputs ++ (
                 with pkgs; [
-                  nix
+                  nixVersions.nix_2_17
                   bear
                   rust-analyzer
                   rust-cbindgen
@@ -70,7 +70,7 @@
               # native libs
               buildInputs = with final; [
                 boost
-                nix
+                nixVersions.nix_2_17
               ] ++ lib.optional final.stdenv.isDarwin
                 final.darwin.apple_sdk.frameworks.Security;
             };
